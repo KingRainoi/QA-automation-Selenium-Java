@@ -14,7 +14,6 @@ public class practice1 {
 
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 
-        
         driver.findElement(By.cssSelector("input[id='checkBoxOption1']")).click();
         Assert.assertTrue(driver.findElement(By.cssSelector("input[id='checkBoxOption1']")).isSelected());
         try {
