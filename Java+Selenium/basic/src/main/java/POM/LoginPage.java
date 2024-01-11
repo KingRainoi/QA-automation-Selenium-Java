@@ -26,10 +26,12 @@ public class LoginPage extends abstractComponents{
     @FindBy(id = "login")
     WebElement loginButton;
 
-    public void loginIntoApplication(String email,String password) {
+    public ProductCataloguePage loginIntoApplication(String email,String password) {
         userEmail.sendKeys(email);
         userPassword.sendKeys(password);
         loginButton.click();
+        ProductCataloguePage productCataloguePage = new ProductCataloguePage(driver);
+        return productCataloguePage;
     }
 
     public void goTo() {

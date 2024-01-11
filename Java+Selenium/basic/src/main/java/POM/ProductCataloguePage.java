@@ -28,6 +28,8 @@ public class ProductCataloguePage extends abstractComponents {
     By productsBy = By.cssSelector(".mb-3");
     By addToCart = By.cssSelector(".card-body button:last-of-type");
     By toastMessage = By.cssSelector("#toast-container");
+    By shoppingCart = By.cssSelector("button[routerlink='/dashboard/cart']");
+    By spinnerOverlay = By.cssSelector(".ngx-spinner-overlay");
 
     public List<WebElement> getProductsList() {
         waitForElementToAppear(productsBy);
@@ -46,7 +48,10 @@ public class ProductCataloguePage extends abstractComponents {
         waitForElementToDisappear(spinner);
     }
 
-    public void goToCart(){
-        driver.findElement(By.cssSelector(""));
+    public ShoppingCartPage goToCart() {
+        waitForElementToDisappear();
+        driver.findElement(shoppingCart).click();
+        ShoppingCartPage cartPage = new ShoppingCartPage(driver);
+        return cartPage;
     }
 }

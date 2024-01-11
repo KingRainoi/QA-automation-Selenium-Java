@@ -25,4 +25,14 @@ public class abstractComponents {
     public void waitForElementToDisappear(WebElement element) {
         this.wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
+    public void waitForElementToDisappear() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    
 }
